@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugares</title>
+    <style>
+        /* Estilos básicos para las tarjetas y su distribución */
+        .container {
+            max-width: auto;
+            margin: 0 auto;
+            align-items: center;
+            font-family: Gotham;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 1px;
+            width: 100%;
+        }
+
+        /*dispositivos moviles*/
+        @media only screen and (max-width: 600px) {
+            .col-xs-1 {
+                width: 8.33%;
+            }
+
+            .col-xs-2 {
+                width: 16.66%;
+            }
+
+            .col-xs-3 {
+                width: 25%;
+            }
+
+            .col-xs-4 {
+                width: 33.33%;
+            }
+
+            .col-xs-5 {
+                width: 41.66%;
+            }
+
+            .col-xs-6 {
+                width: 50%;
+            }
+
+            .col-xs-7 {
+                width: 58.33%;
+            }
+
+            .col-xs-8 {
+                width: 66.66%;
+            }
+
+            .col-xs-9 {
+                width: 75%;
+            }
+
+            .col-xs-10 {
+                width: 83.33%;
+            }
+
+            .col-xs-11 {
+                width: 91.66%;
+            }
+
+            .col-xs-12 {
+                width: 100%;
+            }
+        }
+
+        /*tablets*/
+        @media only screen and (min-width: 600px) {
+            .col-s-1 {
+                width: 8.33%;
+            }
+
+            .col-s-2 {
+                width: 16.66%;
+            }
+
+            .col-s-3 {
+                width: 25%;
+            }
+
+            .col-s-4 {
+                width: 33.33%;
+            }
+
+            .col-s-5 {
+                width: 41.66%;
+            }
+
+            .col-s-6 {
+                width: 50%;
+            }
+
+            .col-s-7 {
+                width: 58.33%;
+            }
+
+            .col-s-8 {
+                width: 66.66%;
+            }
+
+            .col-s-9 {
+                width: 75%;
+            }
+
+            .col-s-10 {
+                width: 83.33%;
+            }
+
+            .col-s-11 {
+                width: 91.66%;
+            }
+
+            .col-s-12 {
+                width: 100%;
+            }
+        }
+
+        /*escritorios*/
+        @media only screen and (min-width: 768px) {
+            .col-m-1 {
+                width: 8.33%;
+            }
+
+            .col-m-2 {
+                width: 16.66%;
+            }
+
+            .col-m-3 {
+                width: 25%;
+            }
+
+            .col-m-4 {
+                width: 33.33%;
+            }
+
+            .col-m-5 {
+                width: 41.66%;
+            }
+
+            .col-m-6 {
+                width: 50%;
+            }
+
+            .col-m-7 {
+                width: 58.33%;
+            }
+
+            .col-m-8 {
+                width: 66.66%;
+            }
+
+            .col-m-9 {
+                width: 75%;
+            }
+
+            .col-m-10 {
+                width: 83.33%;
+            }
+
+            .col-m-11 {
+                width: 91.66%;
+            }
+
+            .col-m-12 {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (min-width: 992px) {
+            .col-l-1 {
+                width: 8.33%;
+            }
+
+            .col-l-2 {
+                width: 16.66%;
+            }
+
+            .col-l-3 {
+                width: 25%;
+            }
+
+            .col-l-4 {
+                width: 33.33%;
+            }
+
+            .col-l-5 {
+                width: 41.66%;
+            }
+
+            .col-l-6 {
+                width: 50%;
+            }
+
+            .col-l-7 {
+                width: 58.33%;
+            }
+
+            .col-l-8 {
+                width: 66.66%;
+            }
+
+            .col-l-9 {
+                width: 75%;
+            }
+
+            .col-l-10 {
+                width: 83.33%;
+            }
+
+            .col-l-11 {
+                width: 91.66%;
+            }
+
+            .col-l-12 {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .col-xl-1 {
+                width: 8.33%;
+            }
+
+            .col-xl-2 {
+                width: 16.66%;
+            }
+
+            .col-xl-3 {
+                width: 25%;
+            }
+
+            .col-xl-4 {
+                width: 33.33%;
+            }
+
+            .col-xl-5 {
+                width: 41.66%;
+            }
+
+            .col-xl-6 {
+                width: 50%;
+            }
+
+            .col-xl-7 {
+                width: 58.33%;
+            }
+
+            .col-xl-8 {
+                width: 66.66%;
+            }
+
+            .col-xl-9 {
+                width: 75%;
+            }
+
+            .col-xl-10 {
+                width: 83.33%;
+            }
+
+            .col-xl-11 {
+                width: 91.66%;
+            }
+
+            .col-xl-12 {
+                width: 100%;
+            }
+        }
+
+        .card {
+            font-family: Gotham;
+            border: 2px solid #ccc;
+            padding: 10px;
+            min-width: 620px;
+            width: 45%;
+            height: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Ajusta el ancho según tus necesidades */
+        }
+
+        .card2 {
+            font-family: Gotham;
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-width: 620px;
+            width: 30%;
+            height: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sedes principales</h1>
+    <div class="container">
+        <div class="row">
+            <div class="card col-s-12 col-m-6 col-l-6 col-xl-6">
+                <h2>Restaurante Casa de la Troje</h2>
+                <div class="col-s-12 col-m-12 col-l-12 col-xl-12">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15066.733445744163!2d-99.6031649!3d19.2526267!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bbb069ebb2f%3A0x4d8e9256eed07c0!2sCasa%20de%20la%20Troje!5e0!3m2!1ses-419!2smx!4v1727207789292!5m2!1ses-419!2smx"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="card col-s-12 col-m-6 col-l-6 col-xl-6">
+                <h2>Teatro Quimera Evento Protocolario Toma de Protesta</h2>
+                <div class="col-s-12 col-m-12 col-l-12 col-xl-12"></div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15066.969434740151!2d-99.606232!3d19.2500571!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bbbfe349973%3A0x5fc6849b635a5e0!2sTeatro%20Quimera!5e0!3m2!1ses-419!2smx!4v1727207969862!5m2!1ses-419!2smx"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    </div>
+    <h1>Estacionamientos</h1>
+    <div class="container"></div>
+    <div class="row">
+        <div class="card col-s-12 col-m-3 col-l-4 col-xl-4">
+            <h2>Estacionamiento Plaza Centro Metepec</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15066.721900828767!2d-99.6035002!3d19.2527524!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8b8132c70a77%3A0xa89a7445f1456204!2sEstacionamiento%20P%C3%BAblico%20Plaza%20Centro%20Metepec!5e0!3m2!1ses-419!2smx!4v1727208062336!5m2!1ses-419!2smx"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="card col-s-12 col-m-3 col-l-4 col-xl-4">
+            <h2> Estacionamiento San Isidro</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12555.273044364296!2d-99.60148215951078!3d19.252988943989934!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bc3cbbdce81%3A0x6c615ece5c618099!2sESTACIONAMIENTO%20SAN%20ISIDRO!5e0!3m2!1ses-419!2smx!4v1727208225147!5m2!1ses-419!2smx"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="card2 col-s-12 col-m-3 col-l-4 col-xl-4">
+            <h2>Estacionamiento <br> DIF El Calvario CERCANO AL TEATRO QUIMERA</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d235.4205852590366!2d-99.6061998!3d19.2506231!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bc7cda38d85%3A0xb13e54ef25220e99!2sEstacionamiento%2C%20Manzana%20002%2C%20Santa%20Cruz%2C%2052140%20Metepec%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1727209331150!5m2!1ses-419!2smx"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
