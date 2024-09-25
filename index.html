@@ -5,82 +5,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lugares</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Gotham CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gotham-fonts@1.0.3/css/gotham-rounded.min.css">
     <style>
+        /* Gotham Fonts */
+        @font-face {
+            font-family: 'Gotham';
+            src: url('./font/Gotham-Black.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Gotham';
+            src: url('./font/Gotham-Bold.otf') format('opentype');
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: 'Gotham';
+            src: url('./font/Gotham-Book.otf') format('opentype'),
+                url('./font/Gotham-Book.ttf') format('truetype');
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: 'Gotham';
+            src: url('./font/Gotham-Light.otf') format('opentype');
+            font-weight: 300;
+        }
+
+        @font-face {
+            font-family: 'Gotham';
+            src: url('./font/Gotham-XLight.otf') format('opentype');
+            font-weight: 200;
+        }
+
+        @font-face {
+            font-family: 'Gotham';
+            src: url('./font/GothamMedium.ttf') format('truetype');
+            font-weight: 500;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Gotham';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-weight: 700;
+            color: #1a4a7c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
         .card {
             font-family: Gotham;
             word-wrap: break-word;
             overflow-wrap: break-word;
-            min-width: 300px; /* Ajusta según tu preferencia */
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            background-color: #fff;
+            margin-bottom: 30px;
+            max-width: 500px;
+            width: 90%;
+            padding: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a4a7c;
+            text-align: center;
+        }
+
+        iframe {
+            border-radius: 8px;
+            transition: box-shadow 0.2s;
             width: 100%;
+        }
+
+        iframe:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .logo-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            /* Centra verticalmente */
+        }
+
+        .logo {
+            width: 80px;
+            position: absolute;
+            /* Posicionamiento absoluto para los logos */
+            top: 10px;
+            /* Ajusta la posición vertical según sea necesario */
+        }
+
+        .logo-left {
+            left: 20px;
+        }
+
+        .logo-right {
+            right: 20px;
+            max-width: 50px;
+        }
+
+        .titulo{
+            margin-top: 20%;
+        }
+
+        @media (min-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .card h2 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
 
 <body>
-
     <div class="container">
-        <h1 class="mt-4">Sedes principales</h1>
-        <div class="row">
-            <div class="col-12 col-md-6 mb-4">
-                <div class="card p-3">
+        <div class="logo-container">
+            <img src="./img/ammac.png" alt="Logo Izquierdo" class="logo logo-left">
+            <img src="./img/logo-presidencia.png" alt="Logo Derecho" class="logo logo-right">
+            <h1 class="mt-6 titulo">SEDES</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 mb-4 d-flex justify-content-center">
+                <div class="card p-3 text-center">
                     <h2>Restaurante Casa de la Troje</h2>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15066.733445744163!2d-99.6031649!3d19.2526267!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bbb069ebb2f%3A0x4d8e9256eed07c0!2sCasa%20de%20la%20Troje!5e0!3m2!1ses-419!2smx!4v1727207789292!5m2!1ses-419!2smx"
-                        class="w-100" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="w-100 mt-3" height="400" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-            <div class="col-12 col-md-6 mb-4">
-                <div class="card p-3">
+            <div class="col-12 col-md-6 mb-4 d-flex justify-content-center">
+                <div class="card p-3 text-center">
                     <h2>Teatro Quimera Evento Protocolario Toma de Protesta</h2>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15066.969434740151!2d-99.606232!3d19.2500571!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bbbfe349973%3A0x5fc6849b635a5e0!2sTeatro%20Quimera!5e0!3m2!1ses-419!2smx!4v1727207969862!5m2!1ses-419!2smx"
-                        class="w-100" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="w-100" height="400" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
 
         <h1>Estacionamientos</h1>
-        <div class="row">
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card p-3">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                <div class="card p-3 text-center">
                     <h2>Estacionamiento Plaza Centro Metepec</h2>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15066.721900828767!2d-99.6035002!3d19.2527524!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8b8132c70a77%3A0xa89a7445f1456204!2sEstacionamiento%20P%C3%BAblico%20Plaza%20Centro%20Metepec!5e0!3m2!1ses-419!2smx!4v1727208062336!5m2!1ses-419!2smx"
-                        class="w-100" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="w-100" height="400" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card p-3">
+            <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                <div class="card p-3 text-center">
                     <h2>Estacionamiento San Isidro</h2>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12555.273044364296!2d-99.60148215951078!3d19.252988943989934!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bc3cbbdce81%3A0x6c615ece5c618099!2sESTACIONAMIENTO%20SAN%20ISIDRO!5e0!3m2!1ses-419!2smx!4v1727208225147!5m2!1ses-419!2smx"
-                        class="w-100" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="w-100" height="400" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card p-3">
+            <div class="col-12 col-md-4 mb-4 d-flex justify-content-center">
+                <div class="card p-3 text-center">
                     <h2>Estacionamiento DIF El Calvario CERCANO AL TEATRO QUIMERA</h2>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d235.4205852590366!2d-99.6061998!3d19.2506231!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bc7cda38d85%3A0xb13e54ef25220e99!2sEstacionamiento%2C%20Manzana%20002%2C%20Santa%20Cruz%2C%2052140%20Metepec%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1727209331150!5m2!1ses-419!2smx"
-                        class="w-100" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1883.3662995923876!2d-99.6076243333117!3d19.250482193647546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd8bbbfd881b07%3A0xa979c30c5cb382d3!2sSecretar%C3%ADa%20de%20Transporte%20Oficina%20de%20licencias%20Metepec!5e0!3m2!1ses-419!2smx!4v1727222305914!5m2!1ses-419!2smx"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
